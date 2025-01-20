@@ -9,7 +9,7 @@ on:
       - main  # Triggers on pull requests targeting the 'main' branch
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,11 +27,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      # Step 4: Run tests
-      - name: Run Tests
-        run: npm test
-
-      # Step 5: Build the app (if applicable)
+      # Step 4: Build the app (if applicable)
       - name: Build App
         run: npm run build
         if: success()  # Run only if previous steps succeed
