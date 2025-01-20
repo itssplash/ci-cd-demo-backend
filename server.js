@@ -1,12 +1,11 @@
 const express = require('express');
 const app = express();
+const port = process.env.PORT || 3000;
 
-// Sample API endpoint
-app.get('/api/message', (req, res) => {
-    res.json({ message: "Hello from the Node.js Backend!" });
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
 });
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-    console.log(`Backend running on port ${PORT}`);
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
 });
